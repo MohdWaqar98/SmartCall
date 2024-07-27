@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
+
+    
+</head>
+<body>
+    <div class="bg-gray-200 w-1/2 p-4 flex flex-col space-y-3 mx-auto mt-4 items-center">
+        <h1 class="text-2xl font-bold" data-th-text="${name}">Welcome to home page</h1>
+        <p class="text-xl text-gray-700">Owner Name : <span data-th-text="${OwnerName}"></span></p>
+        <p>Github Repo Link : <span th:text="${GithubRepository}"></span></p>
+
+        <a th:href="${GithubRepository}">Click Here To Open</a>
+
+        <p class="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis perferendis libero facilis neque eaque eum voluptatum rerum cumque unde fugiat illo, officia delectus qui iusto a, fuga et tempore. Recusandae dicta magni saepe blanditiis praesentium similique, a ratione ad incidunt corrupti id, aperiam iste pariatur error dolorum laudantium? Illo, iure!</p>
+
+        <div>
+            <button class="px-3 py-3 rounded bg-blue-700 text-white hover:bg-blue-600">Click Here</button>
+        </div>
+        
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+
+</body>
+</html>
