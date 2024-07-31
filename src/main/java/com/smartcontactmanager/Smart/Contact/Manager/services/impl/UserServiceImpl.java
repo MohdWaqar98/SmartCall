@@ -16,6 +16,8 @@ import com.smartcontactmanager.Smart.Contact.Manager.helpers.ResourceNotFoundExc
 import com.smartcontactmanager.Smart.Contact.Manager.repositories.UserRepo;
 import com.smartcontactmanager.Smart.Contact.Manager.services.UserService;
 
+import jakarta.validation.constraints.Null;
+
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -93,6 +95,11 @@ public class UserServiceImpl implements UserService{
     @Override
     public List<User> getAllUsers() {
          return userRepo.findAll();
+    }
+
+    @Override
+    public User getUserByEmail(String email) {
+       return userRepo.findByEmail(email).orElse(null);
     }
     
 }

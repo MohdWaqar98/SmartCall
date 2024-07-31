@@ -1,6 +1,7 @@
 package com.smartcontactmanager.Smart.Contact.Manager.entities;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
@@ -35,8 +36,7 @@ import lombok.AccessLevel;
 @NoArgsConstructor
 @Builder
 public class User implements UserDetails{
-
-    private static final String CascadeTyoe = null;
+    
     @Id
     private String userId;
     @Column(name = "user_name",nullable=false)
@@ -52,7 +52,7 @@ public class User implements UserDetails{
     private String phoneNumber;
 
     @Getter(value=AccessLevel.NONE)
-    private boolean enabled=false;
+    private boolean enabled=true;
     private boolean emailVerified=false;
     private boolean phoneVerified=false;
 
@@ -63,6 +63,7 @@ public class User implements UserDetails{
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     private List<Contact> contacts= new ArrayList<>();
 
+    @ElementCollection(fetch = FetchType.EAGER)
     private List<String> roleList=new ArrayList<>();
 
 

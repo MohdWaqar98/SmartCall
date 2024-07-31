@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title})}">
+<head> 
+    <title data-th-text="${loggedInUser.name}+' | SmartCall'">Profile Page</title>
 </head>
 <body>
-    <h1>This is User Profile page</h1>
+
+    <div id="content">
+
+        <div th:if="${loggedInUser}">
+            <div data-th-replace="~{user/sidebar::sidebar}"></div>
+        </div>
+
+        <div class="sm:pl-64" style="height: 1000px;">
+            <div class="flex justify-center flex-col items-center">
+                <h1 class="text-5xl">Welcome to Profile Page</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus consequuntur quidem soluta nemo unde non quia magnam officiis similique ipsa!</p>    
+            </div>
+        </div>
+
+    </div>
+   
 </body>
 </html>
