@@ -10,7 +10,17 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Contact {
 
@@ -23,7 +33,7 @@ public class Contact {
     private String picture;
     @Column(length=1000)
     private String description;
-    private boolean favourite=false;
+    private boolean favourite = false;
     private String InstaLink;
 
     @ManyToOne
