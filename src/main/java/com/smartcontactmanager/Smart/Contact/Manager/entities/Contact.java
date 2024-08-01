@@ -36,6 +36,8 @@ public class Contact {
     private boolean favourite = false;
     private String InstaLink;
 
+    private String cloudinaryImagePublicId;
+
     @ManyToOne
     private User user;
 

@@ -19,14 +19,15 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class ContactForm {
-    @NotBlank(message = "Name is required")
+    
+    @NotBlank(message= "Name is required")
     private String name;
 
     @NotBlank(message = "Email is required")
-    @Email(message = "Invalid Email Address [ example@gmail.com ]")
+    @Email(message= "Invalid Email Address [example@gmail.com]")
     private String email;
 
-    @NotBlank(message = "Phone Number is required")
+    @NotBlank(message= "Phone Number is required")
     @Pattern(regexp = "^[0-9]{10}$", message = "Invalid Phone Number")
     private String phoneNumber;
 
@@ -39,6 +40,7 @@ public class ContactForm {
 
     private String InstaLink;
 
-    private MultipartFile profileImage;
+    
+    private MultipartFile contactImage;
 
 }
