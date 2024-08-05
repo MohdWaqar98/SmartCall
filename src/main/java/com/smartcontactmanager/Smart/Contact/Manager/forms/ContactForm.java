@@ -2,6 +2,8 @@ package com.smartcontactmanager.Smart.Contact.Manager.forms;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import com.smartcontactmanager.Smart.Contact.Manager.validators.ValidFile;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -40,7 +42,9 @@ public class ContactForm {
 
     private String InstaLink;
 
-    
+    @ValidFile(message="Invalid File")
     private MultipartFile contactImage;
+
+    private String picture;
 
 }

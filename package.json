@@ -12,5 +12,8 @@
   "description": "",
   "devDependencies": {
     "tailwindcss": "^3.4.7"
+  },
+  "dependencies": {
+    "sweetalert2": "^11.6.13"
   }
 }
