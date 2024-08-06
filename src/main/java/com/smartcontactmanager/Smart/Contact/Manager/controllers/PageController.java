@@ -79,25 +79,14 @@ public class PageController {
         if(rBindingResult.hasErrors()){
             return "register";
         }
-        //save to database
-
-        //userservice
-
-        //User user=User.builder()
-        // .name(userForm.getName())
-        // .email(userForm.getEmail())
-        // .password(userForm.getPassword())
-        // .about(userForm.getAbout())
-        // .phoneNumber(userForm.getPhoneNumber())
-        // .profilePic("https://www.freepik.com/free-photos-vectors/default-profile-pic")
-        // .build();
-
+        
         User user=new User();
         user.setName(userForm.getName());
         user.setEmail(userForm.getEmail());
         user.setPassword(userForm.getPassword());
         user.setAbout(userForm.getAbout());
         user.setPhoneNumber(userForm.getPhoneNumber());
+        user.setEnabled(false);
         user.setProfilePic("https://www.freepik.com/free-photos-vectors/default-profile-pic");
 
         User savedUser=userService.saveUser(user);

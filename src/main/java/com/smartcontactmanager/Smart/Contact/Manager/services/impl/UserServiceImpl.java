@@ -12,8 +12,10 @@ import org.springframework.stereotype.Service;
 
 import com.smartcontactmanager.Smart.Contact.Manager.entities.User;
 import com.smartcontactmanager.Smart.Contact.Manager.helpers.AppConstants;
+import com.smartcontactmanager.Smart.Contact.Manager.helpers.Helper;
 import com.smartcontactmanager.Smart.Contact.Manager.helpers.ResourceNotFoundException;
 import com.smartcontactmanager.Smart.Contact.Manager.repositories.UserRepo;
+import com.smartcontactmanager.Smart.Contact.Manager.services.EmailService;
 import com.smartcontactmanager.Smart.Contact.Manager.services.UserService;
 
 import jakarta.validation.constraints.Null;
@@ -28,6 +30,9 @@ public class UserServiceImpl implements UserService{
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private EmailService emailService;
 
 
     private Logger logger= LoggerFactory.getLogger(this.getClass());
@@ -44,7 +49,12 @@ public class UserServiceImpl implements UserService{
 
 
         logger.info(user.getProvider().toString());
-        return userRepo.save(user);
+        String emailToken = UUID.randomUUID().toString();
+        user.setEmailToken(emailToken);
+        User savedUser = userRepo.save(user);
+        String emailLink = Helper.getLinkForEmailVerificatiton(emailToken);
+        emailService.sendEmail(savedUser.getEmail(), "Verify Account : Smart  Contact Manager", emailLink);
+        return savedUser;
     }
 
     @Override
