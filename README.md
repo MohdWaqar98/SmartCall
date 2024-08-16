@@ -54,6 +54,7 @@ Smart Call is a comprehensive contact management system built using Java Spring 
    cd smart-call
    ```
    Or
+   
    ```bash
    Open the Folder in Visual Studio Code.
    ```
@@ -68,19 +69,21 @@ Smart Call is a comprehensive contact management system built using Java Spring 
    ```bash
    Go to Spring Boot Dashboard and Run the Application.
    ```
+   
    Or
-  ```bash
+   
+   ```bash
    Go to Java Project then Right click and Run the Application.
    ```
 
-6. Navigate to the frontend folder and run Tailwind CSS:
+7. Navigate to the frontend folder and run Tailwind CSS:
 
    ```bash
    Run this Build Command On Your Terminal
    npx tailwindcss -i src/main/resources/static/css/input.css -o src/main/resources/static/css/output.css --watch
    ```
 
-7. Access the application at `http://localhost:8081`.
+8. Access the application at `http://localhost:8081`.
 
 ### Usage
 
@@ -92,12 +95,20 @@ Smart Call is a comprehensive contact management system built using Java Spring 
 
 **Login Page**
 ![image](https://github.com/user-attachments/assets/82a03239-c301-421d-ba90-2cecaedf5322)
+
+
 **Register Page**
 ![image](https://github.com/user-attachments/assets/c7ec28a3-5b46-4c25-82fb-f925f8d5c4ca)
+
+
 **Profile Page**
 ![image](https://github.com/user-attachments/assets/5819c543-ed1b-4c80-8bb2-f2f18b57e77c)
+
+
 **Add Contact Page**
 ![image](https://github.com/user-attachments/assets/bae5bc43-40c0-45cb-aaa6-a4af37523831)
+
+
 **View Contact Page**
 ![image](https://github.com/user-attachments/assets/27b0edd0-6a1d-449e-bdd4-3d08fbce3538)
 
