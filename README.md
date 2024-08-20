@@ -45,7 +45,7 @@ Smart Call is a comprehensive contact management system built using Java Spring 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/smart-call.git
+   git clone https://github.com/MohdWaqar98/smart-call.git
    ```
 
 2. Navigate to the project directory:
